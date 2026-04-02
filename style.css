@@ -1,0 +1,624 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #EAF4FF;
+    padding-top: 70px; /* adjust based on navbar height */
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    align-items: center;
+    padding: 11px 35px;
+    background: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* DESKTOP FIX */
+.nav-links {
+  display: flex;
+  background: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-left: auto;   /* push to right */
+    align-items: center;
+    gap: 25px;           /* better spacing */
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+
+/* HAMBURGER ICON */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+
+/* HERO */
+#home {
+    padding: 80px 0;   /* instead of full height */
+    display: flex;
+    min-height: 80vh;   /* reduced height */
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    padding: 40px 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+    scroll-margin-top: 80px;
+    position: relative;
+    z-index: 1; /* keep below navbar */
+}
+
+/* HERO CONTAINER */
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: flex-end;  /* 🔥 RIGHT SIDE */
+}
+
+/* TEXT LEFT */
+.hero-text {
+  flex: 1;
+}
+
+/* IMAGE RIGHT */
+
+.profile img {
+  width: 320px;   /* 🔥 bigger */
+  height: 320px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+}
+
+.hero-text span {
+    color: #0A66C2;
+}
+
+.hero-text p {
+    margin: 15px 0;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    background: #0A66C2;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #084a91;
+}
+
+/* PERSONAL INFO BELOW BUTTON */
+.personal-info {
+    margin-top: 25px;
+    font-size: 15px;
+    color: #333;
+}
+
+.personal-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.personal-info img {
+    width: 18px;
+    height: 18px;
+}
+
+.personal-info a {
+    color: #0A66C2;
+    text-decoration: none;
+}
+
+.personal-info a:hover {
+    text-decoration: underline;
+}
+
+/* IMAGE */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== PROFILE IMAGE CIRCLE ===== */
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* spacing if 2 images */
+    
+    /* 👈 Adjust these values to move it precisely where you want it */
+    position: relative;
+    left: 20px;  /* Moves to the right. Change to -20px to move left */
+    top: -10px;  /* Moves it slightly upwards. Change to 10px to move down */
+}
+
+.profile img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #0A66C2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.profile img:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* SECTIONS */
+section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+    scroll-margin-top: 80px; /* adjust based on navbar height */
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SKILLS */
+.skill {
+    margin: 20px 0;
+}
+
+.bar {
+    width: 60%;
+    margin: auto;
+    background: #ddd;
+    border-radius: 20px;
+}
+
+.bar span {
+    display: block;
+    height: 10px;
+    background: #0A66C2;
+    border-radius: 20px;
+}
+
+/* PROJECT */
+.project-card {
+    padding: 20px;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+#about {
+    text-align: left;          /* move content to left */
+    max-width: 900px;          /* control width */
+    margin: auto;              /* center block */
+}
+
+#about h2 {
+    margin-bottom: 15px;
+    color: #0A66C2;
+}
+
+#about p {
+    line-height: 1.7;          /* better readability */
+    text-align: justify;       /* clean paragraph alignment */
+}
+
+#skills {
+    text-align: left;        /* same as about */
+    max-width: 900px;
+    margin: auto;
+}
+
+#skills h2 {
+    margin-bottom: 20px;
+    color: #0A66C2;
+}
+
+.skill {
+    margin: 20px 0;
+}
+
+.skill p {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* SKILL BAR */
+.bar {
+    width: 100%;            /* full width like paragraph */
+    background: #ddd;
+    border-radius: 20px;
+}
+
+.bar span {
+    display: block;
+    height: 10px;
+    background: linear-gradient(90deg, #8A2BE2, #0A66C2); /* violet → blue */
+    border-radius: 20px;
+}
+
+/* PROJECTS */
+#projects {
+    text-align: left;
+    max-width: 900px;
+    margin: auto;
+}
+
+#projects h2 {
+    margin-bottom: 20px;
+    color: #0A66C2;
+}
+
+/* PROJECT CARD */
+.project-card {
+    margin-top: 10px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    margin-bottom: 10px;
+}
+
+/* RESUME */
+#resume {
+    text-align: left;
+    max-width: 900px;
+    margin: auto;
+}
+
+#resume h2 {
+    margin-bottom: 20px;
+    color: #0A66C2;
+}
+
+/* CONTACT */
+#contact {
+    text-align: left;
+    max-width: 900px;
+    margin: auto;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+    color: #0A66C2;
+}
+
+#contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#contact a {
+    text-decoration: none;
+    color: #333;
+}
+
+#contact a:hover {
+    color: #6a0dad; /* violet hover */
+}
+
+#contact i {
+    margin-right: 10px;
+    color: #6a0dad;
+    font-size: 20px;
+}
+
+#projects h2,
+#resume h2,
+#contact h2 {
+    border-left: 5px solid #0A66C2;
+    padding-left: 10px;
+}
+
+.footer-box {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+  /* ================= NAVBAR ================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  nav {
+    padding: 10px 20px; /* Reduced side padding so logo fits */
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .menu-toggle {
+    display: flex;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 55px; /* Aligned properly with thinner nav */
+    left: 0;
+    width: 100%;
+    background: black;
+    text-align: center;
+    padding: 25px 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+    background: black;
+  }
+  
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 12px 0;
+  }
+
+  /* ✅ MOVE HERO HERE */
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px; /* Space between text and image */
+  }
+
+  .hero-text h1 {
+    font-size: 32px; /* Much better for mobile wrapping */
+  }
+
+  .personal-info {
+    margin: 20px auto;
+  }
+  
+  .personal-info p {
+    justify-content: center; /* Center the layout of the icons */
+  }
+
+  .hero-visual {
+    justify-content: center;
+  }
+
+  .profile img {
+    width: 270px;
+    height: 270px;
+  }
+
+  .cert-card {
+    width: 90%;
+  }
+}
+  /* ================= SECTIONS ================= */
+  section {
+    padding: 40px 20px;
+  }
+
+  #about,
+  #skills,
+  #projects,
+  #resume,
+  #contact {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+/* ================= CERTIFICATE SECTION ================= */
+#certificate {
+    text-align: left;
+    max-width: 900px;
+    margin: auto;
+    scroll-margin-top: 80px; /* 🔥 FIX for navbar overlap */
+}
+
+/* TITLE */
+#certificate h2 {
+    margin-bottom: 20px;
+    color: #0A66C2;
+    border-left: 5px solid #0A66C2;
+    padding-left: 10px;
+}
+
+/* CONTAINER */
+.cert-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* CARD */
+.cert-card {
+    background: white;
+    padding: 20px;
+    width: 260px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+}
+
+/* TEXT */
+.cert-card h3 {
+    margin-bottom: 10px;
+}
+
+.cert-card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* BUTTON */
+.cert-card button {
+    background: #0A66C2;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.cert-card button:hover {
+    background: #084a91;
+    transform: scale(1.05);
+}
+
+/* ================= EXPERIENCE ================= */
+#experience {
+    text-align: left;
+    max-width: 900px;
+    margin: auto;
+}
+
+#experience h2 {
+    margin-bottom: 20px;
+    color: #0A66C2;
+    border-left: 5px solid #0A66C2;
+    padding-left: 10px;
+}
+
+/* ================= ACHIEVEMENTS ================= */
+#achievements {
+    text-align: left;
+    max-width: 900px;
+    margin: auto;
+}
+
+#achievements h2 {
+    margin-bottom: 20px;
+    color: #0A66C2;
+    border-left: 5px solid #0A66C2;
+    padding-left: 10px;
+}
+
+#achievements ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#achievements li {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background: white;
+    border-left: 4px solid #8A2BE2;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* COMMON SECTION STYLE */
+section {
+    text-align: left;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ALL SECTION HEADINGS SAME */
+section h2 {
+    margin-bottom: 20px;
+    color: #0A66C2;
+    border-left: 5px solid #0A66C2;
+    padding-left: 10px;
+}
+
+#contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#contact a {
+    text-decoration: none;
+    color: #333;
+}
+
+#contact a:hover {
+    color: #6a0dad;
+}
+
+#contact i {
+    margin-right: 10px;
+    color: #6a0dad;
+    font-size: 20px;
+}
+
+/* LOGO (NAME LEFT SIDE) */
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0A66C2;   /* blue highlight */
+}
