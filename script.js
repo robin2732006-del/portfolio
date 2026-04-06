@@ -76,15 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // ======================
-    // PROJECT BUTTON
-    // ======================
-    const projectBtn = document.querySelector(".project-card button");
-    if (projectBtn) {
-        projectBtn.addEventListener("click", () => {
-            window.open("https://github.com/robin2732006-del", "_blank");
-        });
-    }
 
     // ======================
     // SCROLL ANIMATION
